@@ -1,8 +1,10 @@
 """
-aula 28
+aula 37
 
 """
 
+# python ide console online
+# https://console.python.org/python-dot-org-console/
 
 class Helpers:
   def inputIntData ( data = "" ):
@@ -10,66 +12,203 @@ class Helpers:
 
 
 def exercicios (  ):
+
+  def aula37 (  ) :
+
+    import random
+
+    __CONSTANTE_MATRIX = 4
+
+    def generateMatrix (  ) :
+
+      matriz = []
+
+      lista = list(range(pow(__CONSTANTE_MATRIX,2)))
+
+      for i in range(__CONSTANTE_MATRIX) : 
+
+        linha = []
+
+        for j in range(__CONSTANTE_MATRIX) :
+          linha.append(random.choice(lista))
+          lista.remove(linha[j])
+
+        matriz.append(linha)
+
+      return matriz
+
+    def trocaRandom ( matrix ) :
+
+
+      def trocaInMatriz ( p1, p2, matriz ) :
+
+        aux = matriz[p1[0]][p1[1]]
+        matriz[p1[0]][p1[1]] = matriz[p2[0]][p2[1]]
+        matriz[p2[0]][p2[1]] = aux
+
+      def escolheNumerosTupla (  ) :
+        
+        tuplado = []
+
+        numeros = list(range(4))
+
+        tuplado.append(random.choice(numeros))
+        numeros.remove(tuplado[len(tuplado)-1])
+
+        tuplado.append(random.choice(numeros))
+        numeros.remove(tuplado[len(tuplado)-1])
+
+        return tuple(tuplado)
+
+      trocaInMatriz ( escolheNumerosTupla(), \
+                    escolheNumerosTupla(), matrix )
+
+
+    for i in range(64) :
+
+      matrix = generateMatrix()
+
+      # print (matrix)
+
+      for i in range(9) :
+        trocaRandom ( matrix )
+
+      print (matrix)
+
+
+
+
+  def aula35 (  ) :
+    aula37 (  )
+
+    print ( "aula 35" )
+
+    def readLineText (  ):
+      
+      return int ( input ( "digite um numero (-1 to break)" ) )
+
+    n = readLineText (  )
+
+    tup = ()
+
+    while n != -1:
+      
+      alt = readLineText (  )
+
+      if n != -1:
+      
+        n = alt
+      
+      tup += n,
+
+    def achaMaior (lista):
+
+      maior = tup[0]
+
+      for i in lista:
+
+        if maior < i:
+
+          maior = i
+
+      return maior
+
+    print("Maior numero: ", achaMaior ( tup ))
+
+
+  def aula32 (  ) : 
+    print ( "aula 32" )
+    
+    import random
+
+    megasena = list(range(1,61))
+
+    sorteado = [6,23,12,42,8,5]
+
+    sorteado.sort()
+    
+    sorte = []
+
+    mega_sort = megasena.copy()
+
+    contador = 0
+
+    while sorteado != sorte:
+
+      for i in range(6):
+        sorte.append(mega_sort[random.randint(0,59)])
+        
+      sorte.sort (  )
+      print(sorte)
+      # print ("{0:10} : {1:5}".format(str(sorteado),str(sorte)))
+
+      contador += 1
+
+    print ("Porcentagem {0:.5f} total de {1:10}".format(60/contador,contador))
+
+  def aula31 (  ):
+
+    print ("Aula 31")
+    
+    indicie = [1,2,3,6,5,4,9,8,5,6,47,23]
+
+    valor = 0;
+    while valor != -23:
+
+      for i in range ( len(indicie) ):
+        print ("%d : %d"%(i, indicie[i]))
+
+      valor = int (input ("Digite o indice:"))
+
+      while (valor < 0) or (valor > len(indicie)):
+        valor = int (input ("Digite o indice:"))
+
+      print (indicie[valor])
+
+      indicie.remove(indicie[valor])
+
+
+
+
+
   def aula30 (  ):
 
     print ("Aula 30")
 
-    PESSOAS = 5
+    # PESSOAS = 10
 
-    idade = []
-    altura = []
+    # idade = []
+    # altura = []
 
-    for i in range ( 1, PESSOAS ):
+    # for idade in range ( PESSOAS ):
+    #   for altura in range ( PESSOAS ):
 
-      idade_pessoa = int ( input ( "Digite sua idade" ) )
-      altura_pessoa = float ( input ( "Digite sua altura" ) )
+    #     idade.append ( int ( input ( "Digite sua idade" ) ) )
+    #     altura.append ( float ( input ( "Digite sua altura" ) ) )
 
-      idade.append ( idade_pessoa )
-      altura.append ( altura_pessoa )
-
-    for i in range ( (PESSOAS - 1), 0 ,-1 ):
-      print ( "Idade : %2.d"%(idade[i]) )
-      print ( "Altura : %2.2f"%(altura[i]) )
+    # for i in range
 
   def aula29 (  ):
 
     def votacao (  ):
+
+      flag = -1
+
+      # jogadores = []
+
+      # while flag != 0:
+
+      #   if flag <= 23 and flag > 0: 
+      #     swap = int ( input ( "digite o numero do jogador" ) ) 
+      #     jogadores.append ( swap )
+      #   else:
+      #     print ( "Digite um numero no intervado de 1 a 23" )
+
+      # print ( "Total de Votos Computados: %d"%(len(jogadores)) )
+      # for i in range ( 23 ):  
+      #   print ( "Total de Votos do jogador %d: %d"%(i,jogadores.count( i )) )
       
-      import random
 
-      # flag =  int ( input ( "digite o numero do jogador: " ) ) 
-      flag = random.randint(0, 23)
-      jogadores = []
-
-      while flag != 0:
-
-        if flag >= 1 and flag <= 23:
-          jogadores.append ( flag )
-        else:
-          print ( "Digite um numero no intervado de 1 a 23" )
-        
-        # flag = int ( input ( "digite o numero do jogador: " ) )
-        flag = random.randint(0, 100)
-
-      print ( jogadores )
-      print ( "Total de Votos Computados: %d"%(len(jogadores)) )
-      print ( "Total de Votos" )
-      for i in range ( 23, 0, -1 ):  
-        print ( "Total de Votos do jogador %d: %d"%(i,jogadores.count( i ) ) )
-      print ( "Percentual" )
-      for i in range ( 23, 0, -1):  
-        print ( "Percentual de Votos do jogador %d: %d"%(i,100*jogadores.count( i )/len(jogadores)) )
-    
-      max = 0
-      contado = jogadores.count(0)
-      for i in range(23, 1, -1):
-        if contado < jogadores.count( i ):
-          max = i
-          contado = jogadores.count ( i ) 
-      print ( "Total de Votos do Melhor Jogador" )
-      print("Total de Votos do jogador %d: %d" % (max, jogadores.count(max)))
-      print("Percentual de Votos do jogador %d: %d" %
-                (max, 100*jogadores.count(max)/len(jogadores)))
 
     def lancaDados (  ):
 
@@ -90,41 +229,10 @@ def exercicios (  ):
       print ( "lancamentos da face 6: %.2f%% "%((lancamento.count(6)/vezes)*100))
       print ( "lancamentos da face 7: %.2f%% "%((lancamento.count(7)/vezes)*100))
 
-    def mediaAlunosVetor (  ):
-
-      alunos = 10
-
-      media = []
-
-      for aluno in range ( alunos ):
-
-        notas = 0
-
-        for nota in range ( 1, 5 ):
-          
-          nots = float ( input ( "Digite a %i nota do aluno %i: "%(nota,(aluno + 1)) ) )
-
-          while nots < 0 and nots > 10:
-            nots = float(input("Digite uma nota valida : "))
-          notas += nots
-
-        media.append ( notas/4 ) 
-
-      # print ( media )
-      
-      countador = 0
-
-      for i in media:
-        if ( i >= 7.0 ):
-          countador += 1
-        
-      print ( countador )
-
     def main (  ):
       print ( "Aula 29" )
       # lancaDados (  )
       votacao (  )
-      # mediaAlunosVetor (  )
 
 
     main (  )
@@ -276,16 +384,16 @@ def exercicios (  ):
       max = 60000
 
       def randRange (  ):
-        print ( random.randrange ( i, max ) )
+        print ( random.randrange ( i, max ), end = " ", flush = True )
       
       def randInt (  ):
-        print ( random.randint ( i, max ) )
+        print ( random.randint ( i, max ), end = " ", flush = True )
 
       def randchoice (  ):
-        print ( random.choice ( range ( max ) ) )
+        print ( random.choice ( range ( max ) ), end = " ", flush = True )
 
       def randUniform (  ):
-        print ( random.uniform ( 0, 1) )
+        print ( random.uniform ( 0, 1), end = " ", flush = True )
 
       for i in range ( max ):
 
@@ -312,8 +420,8 @@ def exercicios (  ):
         if porta != premio:
           troca += 1
 
-      print ( "E mais vantajoso trocar %.3g %% das vezes"%(troca*100/testes) )
-      print ( "NAO E mais vantajoso trocar %.3g %% das vezes"%((1 - troca/testes) * 100) )
+      print ( "É mais vantajoso trocar %.3g %% das vezes"%(troca*100/testes) )
+      print ( "NÃO É mais vantajoso trocar %.3g %% das vezes"%((1 - troca/testes) * 100) )
 
 
 
@@ -470,13 +578,13 @@ def exercicios (  ):
       numero = float ( input ( "Informe um Numero" ) )
 
       if numero == int ( numero ):
-        print ( "Numero", int ( numero ),"eh Inteiro" )
+        print ( "Numero", int ( numero ),"é Inteiro" )
       else: 
         # decimal = numero - int(numero)
         # if decimal >= 0.5:
         #   numero += 1
         numero = round ( numero )
-        print ( "Numero",int ( numero ),"eh Real" )
+        print ( "Numero",int ( numero ),"é Real" )
       # if type ( int ( numero ) ) is float
     
     def cosDeX (  ):
@@ -529,7 +637,7 @@ def exercicios (  ):
       media /= 3
 
       if media == 10:
-        print ( "Aprovado com distincao" )
+        print ( "Aprovado com distinção" )
         print ( media )
       elif media < 7:
         print ( "Reprovado" )
@@ -551,7 +659,7 @@ def exercicios (  ):
       elif sexo == "F":
         peso = ( 62.1 * altura ) - 44.7 # mulher
 
-      print ( "Seu Peso ideal e: ", peso )
+      print ( "Seu Peso ideal é: ", peso )
     
 
 
@@ -575,8 +683,12 @@ def exercicios (  ):
     # aula26 (  )
     # aula27 (  )
     # aula28 (  )
-    aula29 (  )
+    # aula29 (  )
     # aula30 (  )
+    # aula31 (  )
+    # aula32 (  )
+    # aula35 (  )
+    aula37 (  )
 
 
 
@@ -658,3 +770,4 @@ def main (  ):
 
 
 main (  )
+
