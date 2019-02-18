@@ -1,5 +1,5 @@
 """
-aula 39
+aula 40
 
 """
 
@@ -13,20 +13,56 @@ class Helpers:
 
 def exercicios (  ):
 
+
+  def aula40 (  ) :
+
+    """
+
+      Aula sobre Nested Function e Nonlocal
+
+    """
+
+    def nested (  ) :
+
+      def function (  ) :
+
+        return 42
+
+      nom = 15
+      return pow (function (  ), nom )
+
+    print ( nested (  ) ) 
+
+
   def aula39 (  ) :
 
-    def funcaoRecursivada ( x, y )
+    def funcaoRecursivada ( x, y ) :
       """
         funcao recursiva que imprime de um numero x ate um numero y
       """
+      if x <= y:
 
-      
+        print (x)
+        funcaoRecursivada(x+1,y)
+        
+    def nAteZero ( n ) :
+      """
+        funcao que retorna a soma de n ate zero
+
+      """
+      if n <= 0:
+        return 0
+      return (n + nAteZero(n-1))
+
+
+    def main_39 (  ) :
+      # funcaoRecursivada ( 2,8 )
+
+      print ( nAteZero( 666 ) ) 
 
 
 
-
-
-
+    main_39 (  )
 
 
 
@@ -777,7 +813,8 @@ def exercicios (  ):
     # aula32 (  )
     # aula35 (  )
     # aula37 (  )
-    aula39 (  )
+    # aula39 (  )
+    aula40 (  )
 
 
 
