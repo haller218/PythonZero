@@ -14,7 +14,7 @@ class Helpers:
 def exercicios (  ):
 
 
-  def aula40 (  ) :
+  def aula40 (  ) : # Todo
 
     """
 
@@ -31,7 +31,44 @@ def exercicios (  ):
       nom = 15
       return pow (function (  ), nom )
 
-    print ( nested (  ) ) 
+    def listado (  ) :
+
+      start = 0
+      lista = []
+
+      def incrementador ( valor ) :
+        nonlocal lista , start
+        lista.append(valor)
+        start += 1
+        print ( valor, start )
+
+      return incrementador
+
+    def tabuada (  ) :
+
+      tabuada = 0
+
+      def imprimeTabuada (  ) :
+
+        
+
+    
+    def main_40 (  ) :
+
+      def testes (  ) :
+        print ( nested (  ) ) 
+      
+        lis = listado (  )
+
+        lis ( 'psps' )
+        lis ( 'pspsss' )
+        lis ( 'pspfffs' )
+        lis ( 'pspssds' )
+
+      # testes (  )
+
+
+    main_40 (  )
 
 
   def aula39 (  ) :
