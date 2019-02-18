@@ -1,5 +1,5 @@
 """
-aula 37
+aula 39
 
 """
 
@@ -13,9 +13,91 @@ class Helpers:
 
 def exercicios (  ):
 
+  def aula39 (  ) :
+
+    def funcaoRecursivada ( x, y )
+      """
+        funcao recursiva que imprime de um numero x ate um numero y
+      """
+
+      
+
+
+
+
+
+
+
+
+
   def aula37 (  ) :
 
+
     import random
+
+    def jogoGame (  ) : ## TODO
+
+      __CONSTANTE_MATRIX = 3
+
+      def generateMatrix (  ) :
+
+        matriz = []
+
+        lista = list(range(pow(__CONSTANTE_MATRIX,2)))
+
+        for i in range(__CONSTANTE_MATRIX) : 
+
+          linha = []
+
+          for j in range(__CONSTANTE_MATRIX) :
+            linha.append(random.choice(lista))
+            lista.remove(linha[j])
+
+          if len(matriz) != 15 :
+            matriz.append(linha)
+
+        return matriz
+
+      def trocaInMatriz ( p1, p2, matriz ) :
+
+        aux = matriz[p1[0]][p1[1]]
+        matriz[p1[0]][p1[1]] = matriz[p2[0]][p2[1]]
+        matriz[p2[0]][p2[1]] = aux
+
+      # def VerificaSeVenceu (  ) :
+
+      # def VerificaJogada (  ) :
+
+
+      def ImprimeJogo ( matriz ) :
+        
+        for i in range ( __CONSTANTE_MATRIX ) : 
+          print ("{0:>2} # {1:>2} # {2:>2} ".format(*matriz [ i ]))
+            
+          if i != 3 :
+            print ( "############" )
+
+
+      def MainJogoGame (  ) :
+
+        opc = -1
+
+        while opc != 0 :
+
+          matrix = generateMatrix (  )
+        
+          ImprimeJogo ( matrix )
+
+          opc = int(input("Digite a primeira casa: "))
+
+          if type (opc) == tuple: 
+            x, y = opc 
+
+          trocaInMatriz ( x,y,matrix )
+
+
+        
+      MainJogoGame (  )
 
     __CONSTANTE_MATRIX = 4
 
@@ -63,19 +145,25 @@ def exercicios (  ):
       trocaInMatriz ( escolheNumerosTupla(), \
                     escolheNumerosTupla(), matrix )
 
+    def matrixiado (  ) :
+      for i in range(64) :
 
-    for i in range(64) :
+        matrix = generateMatrix()
 
-      matrix = generateMatrix()
+        # print (matrix)
 
-      # print (matrix)
+        for i in range(9) :
+          trocaRandom ( matrix )
 
-      for i in range(9) :
-        trocaRandom ( matrix )
+        print (matrix)
 
-      print (matrix)
+    def main_37 (  ) :
 
+      # matrixiado (  ) 
 
+      jogoGame (  )
+
+    main_37 (  )
 
 
   def aula35 (  ) :
@@ -688,7 +776,8 @@ def exercicios (  ):
     # aula31 (  )
     # aula32 (  )
     # aula35 (  )
-    aula37 (  )
+    # aula37 (  )
+    aula39 (  )
 
 
 
@@ -770,4 +859,3 @@ def main (  ):
 
 
 main (  )
-
