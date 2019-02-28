@@ -1,5 +1,5 @@
 """
-aula 51
+aula 52
 
 SEE 44
 
@@ -17,12 +17,188 @@ class Helpers:
 
 def exercicios (  ):
 
-  def aula51 (  ) :
+  def aula52 (  ) :
+    """
+      Bytes e for loops em arquivos.
+
+    """
+
+    def gravaArquivo (  ) :
+      """
+        Gravar em Arquivo 
+
+      """
+
+      print ( "## Gravando em Arquivo" )
+
+      fs = open ( 'arquivo.test.', 'w' )
+
+      fs.write('Olá\n')
+      fs.write('Meu\n')
+      fs.write('Nome\n')
+      fs.write('Eh\n')
+      fs.write('Eliseu\n')
+
+      fs.close (  )
+
+
+    def lerArquivo (  ) :
+      """
+        Ler Arquivo 
+
+      """
+
+      print ( "## Lendo Arquivo" )
+
+      fs = open ( 'arquivo.test.', 'r' )
+
+      arquiov = ''
+
+      for i in fs:
+        arquiov += i
+
+      fs.close (  )
+
+      print (arquiov)
+
+
+    def lerArquivoBytes (  ) :
+      """
+        Ler Arquivo 
+
+      """
+
+      print ( "## Lendo Arquivo Bytes" )
+
+      fs = open ( 'arquivo.test.', 'rb' )
+
+      print ( "# > Lendo Arquivo" )
+
+      for i in fs:
+        print ( i )
+
+      fs.close (  )
+
+    # TODO: tell, seek
+
+
+    def main_52 (  ) :
+      """
+        main de Gravando com arquivos aula 52
+
+        TODO: Fazer armazenamento de valores de um jogo em arquivo.
+
+      """
+
+      print ( "Aula 52" )
+
+      gravaArquivo (  )
+
+      lerArquivo (  )
+
+      lerArquivoBytes (  )
+
+    main_52 (  )
+
+
+  def aula51 (  ) : # TODO Relatorio empresa consumo MB
 
     """
       Aula destinada a I/O de arquivos
 
     """
+
+
+    def helloWorldds (  ) :
+
+      print ( "## Hello, world File" )
+
+      arquivo = open ( 'arquivo.test.', 'w' )
+
+      arquivo.write ( "Hello, World!\n" )
+      arquivo.write ( "Chiclete com Banana\n" )
+      arquivo.write ( "Manga Com Leite\n" )
+
+      arquivo.close (  )
+
+    def impr (  ) :
+
+      print ( "## Imprime array de strings em arquivo" )
+
+      arquivo0 = open ( 'arquivo.linhas.test.', 'w' )
+
+      arquivo0.writelines ( ['Ola', 'arquivo', 'essa', 'eh', 'ah', 'nossa', 'primeira', 'aula'] )
+
+      arquivo0.close (  )
+
+    def criaNumeros (  ) :
+
+      print ( "## Cria arquivo com numeros(string) de 1 ate 64" )
+
+      arquivo_test = open('arquivo.conta.', 'w')
+
+      arquivo_test.writelines([str(i)+' ' for i in range(64)])
+
+      arquivo_test.close()
+
+
+    def leLinhas (  ) :
+
+      arq= 'arquivo.linhas.test.'
+
+      print ( f"\n\n## lendo o arquivo {arq}" )
+
+      fili = open ( arq, 'r' )
+
+      for i in range ( 2 ) :
+        linha = fili.readline()
+        print ( linha, end='' )
+
+      fili.close (  )
+
+    def leTestArquivo (  ) :
+
+      arq= 'arquivo.test.'
+
+      print ( f"\n\n## lendo o arquivo {arq}" )
+
+      fili = open ( arq, 'r' )
+
+      linha = fili.readlines()
+      print ( linha )
+
+      fili.close (  )
+
+    def addLinhaArquivo (  ) :
+
+      arq= 'arquivo.test.'
+
+      print ( f"\n\n## Escrevendo em arquivo {arq}" )
+
+      fili = open ( arq, 'a' )
+
+      fili.write('Nova Linha')
+
+      fili.close (  )
+
+    def main_51 (  ) :
+
+      print ( ">> Escrevendo em um Arquivo." )
+      helloWorldds (  )
+      impr (  )
+      criaNumeros (  )
+      
+      print ( ">> Lendo de um Arquivo" )
+      
+      leLinhas (  )
+      leTestArquivo (  )
+      addLinhaArquivo (  )
+      leTestArquivo (  )
+
+
+
+    main_51 (  )
+
 
   def aula48 (  ) :
 
@@ -876,7 +1052,11 @@ def exercicios (  ):
 
   def aulas (  ):
 
-    aula48 (  )
+    """
+
+      Scripts de execução segundo aula.
+
+    """
 
     # aula20 (  )
     # aula21 (  )
@@ -895,6 +1075,9 @@ def exercicios (  ):
     # aula37 (  )
     # aula39 (  )
     # aula40 (  )
+    # aula48 (  )
+    # aula51 (  )
+    aula52 (  )
 
   aulas (  )
 
