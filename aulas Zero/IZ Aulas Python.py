@@ -1,10 +1,14 @@
 """
-aula 40
+aula 51
+
+SEE 44
 
 """
 
 # python ide console online
 # https://console.python.org/python-dot-org-console/
+# https://github.com/luizdefranca/Curso-Python-IgnoranciaZero
+# https://hub.mybinder.org
 
 class Helpers:
   def inputIntData ( data = "" ):
@@ -13,9 +17,40 @@ class Helpers:
 
 def exercicios (  ):
 
+  def aula51 (  ) :
 
+    """
+      Aula destinada a I/O de arquivos
+
+    """
+
+  def aula48 (  ) :
+
+    """
+    
+      string que sera manipulada
+
+    """
+
+
+    f = 'mississipi'
+
+    value = 'm'
+
+    print ( "Index of {1} in {2} : {0}\n".format ( f.index ( value ), value , f) )
+
+    value = 'ss'
+
+    print ( "Find of {1} in {2} : {0}\n".format ( f.find ( value ), value , f) )
+
+    value = 'i'
+
+    print ( "Count of {1} in {2} : {0}\n".format ( f.count ( value ), value , f) )
+
+
+ 
   def aula40 (  ) : # Todo
-
+    
     """
 
       Aula sobre Nested Function e Nonlocal
@@ -50,9 +85,14 @@ def exercicios (  ):
 
       def imprimeTabuada (  ) :
 
+        """
+
+          # TODO
+
+        """
+
         
 
-    
     def main_40 (  ) :
 
       def testes (  ) :
@@ -65,7 +105,7 @@ def exercicios (  ):
         lis ( 'pspfffs' )
         lis ( 'pspssds' )
 
-      # testes (  )
+      testes (  )
 
 
     main_40 (  )
@@ -835,6 +875,9 @@ def exercicios (  ):
         
 
   def aulas (  ):
+
+    aula48 (  )
+
     # aula20 (  )
     # aula21 (  )
     # aula22 (  )
@@ -851,9 +894,7 @@ def exercicios (  ):
     # aula35 (  )
     # aula37 (  )
     # aula39 (  )
-    aula40 (  )
-
-
+    # aula40 (  )
 
   aulas (  )
 
